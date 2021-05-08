@@ -1,4 +1,6 @@
 :host {
+    $content-size: clamp(1rem, 10vw, 10rem);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -6,49 +8,35 @@
     background-color: black;
     background-image: url('../../../assets/Among-us-background.png');
     background-size: cover;
+    position: relative;
     flex: 1;
 
     h1 {
-        font-size: 10rem;
+        font-size: $content-size;
         color: white;
         font-family: 'Varela Round', sans-serif;
         white-space: nowrap;
         overflow: hidden;
-        animation: eject-text 5s steps(60, end);
-        transition: width;
     }
     img {
         position: absolute;
-        width: 10rem;
+        width: $content-size;
         transition: all;
         transform: rotate(210deg);
         animation: ejected 5s;
-        left: calc(100% - 20rem);
-    }
-}
-
-@keyframes eject-text {
-    from {
-        width: 0;
-    }
-
-    25% {
-        width: 0;
-    }
-
-    to {
-        width: 80rem;
+        left: 85vw;
+        top: 55vh;
     }
 }
 
 @keyframes ejected {
     0% {
-        left: 0;
+        left:-20rem ;
         transform: rotate(0);
     }
 
     100% {
-        left: calc(100% - 20rem);
+        left: 85vw;
         transform: rotate(210deg);
     }
 }
